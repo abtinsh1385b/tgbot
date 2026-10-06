@@ -42,6 +42,17 @@ async def cmd_start(message: types.Message, command: CommandObject):
     )
 
     args = command.args
+
+    if args == "games":
+        keyboard = InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(
+                text="🎮 منوی بازی‌ها",
+                web_app=WebAppInfo(url=GAMEMENU_URL)
+            )]
+        ])
+        await message.answer("منوی بازی‌ها:", reply_markup=keyboard)
+        return
+    
     if args:
         match = _PANEL_ARGS_RE.match(args)
         if match:
