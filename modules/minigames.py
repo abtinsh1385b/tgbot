@@ -2,7 +2,7 @@ from aiogram import Router, types, F
 from aiogram.filters import Command, CommandObject
 from aiogram.types import WebAppInfo, InlineKeyboardMarkup, InlineKeyboardButton
 from config import GAMEMENU_URL  # یا یک متغیر جدا مثل GAMEMENU_URL
-
+from aiogram.enums import ChatType
 router = Router(name="minigames")
 
 @router.message(Command("play", "games", "minigame"))
